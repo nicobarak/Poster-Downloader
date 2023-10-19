@@ -1,0 +1,6 @@
+python-dotenv
+requests
+pillow
+tmdbsimple
+pytest
+datetime
