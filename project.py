@@ -12,10 +12,9 @@ load_dotenv()
 
 def get_movie_poster(movie_name, year):
     try:
-        if TMDB_API_KEY == None:
-            tmdb.API_KEY = os.getenv("TMDB_API_KEY")
-        else:
-            tmdb.API_KEY = TMDB_API_KEY    
+        tmdb.API_KEY = os.getenv("TMDB_API_KEY")
+        if tmdb.API_KEY is None:
+            tmdb.API_KEY = TMDB_API_KEY
         search = tmdb.Search()
         search.movie(query=movie_name, year=year)
         if search.total_results <= 0:
